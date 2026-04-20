@@ -302,6 +302,144 @@
       border: 1px solid var(--border);
       padding: 3px 9px; border-radius: 3px;
     }
+    .tech.hl {
+      color: var(--accent); background: rgba(79,142,247,.07);
+      border-color: rgba(79,142,247,.25);
+    }
+
+    /* ── FULL PROJECT CARDS ── */
+    .proj-full {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      transition: border-color .3s;
+    }
+    .proj-full:hover { border-color: var(--border-hi); }
+    .proj-full:last-child { margin-bottom: 0; }
+
+    .proj-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px) 0;
+    }
+
+    .proj-icon-wrap {
+      font-size: 36px;
+      width: 64px; height: 64px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .proj-num-lg {
+      font-family: var(--fm); font-size: 11px;
+      color: var(--dim); margin-bottom: 6px;
+    }
+
+    .proj-title {
+      font-family: var(--fd);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 700; color: var(--text);
+      letter-spacing: -.5px; line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .proj-client {
+      font-size: 13px; color: var(--accent3);
+      font-family: var(--fm); margin-bottom: 10px;
+    }
+
+    .proj-attrs {
+      display: flex; flex-wrap: wrap;
+      align-items: center; gap: 16px;
+    }
+
+    .proj-attr {
+      display: flex; align-items: center; gap: 5px;
+      font-family: var(--fm); font-size: 12px;
+      color: var(--muted);
+    }
+    .proj-attr svg { opacity: .6; }
+
+    .proj-attr-role {
+      font-family: var(--fm); font-size: 11px;
+      color: var(--accent2);
+      background: rgba(124,90,240,.08);
+      border: 1px solid rgba(124,90,240,.2);
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    .proj-body {
+      padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px);
+    }
+
+    .proj-summary {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.8; font-weight: 300;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .proj-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 3vw, 48px);
+      margin-bottom: 4px;
+    }
+
+    .proj-section-label {
+      font-family: var(--fm); font-size: 10px;
+      color: var(--dim); letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+
+    .proj-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .proj-list li {
+      display: flex; gap: 10px;
+      font-size: 14px; color: var(--muted);
+      font-weight: 300; line-height: 1.6;
+    }
+    .proj-list li::before {
+      content: '→'; color: var(--accent);
+      font-family: var(--fm); flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .proj-list li strong { color: var(--text); font-weight: 500; }
+
+    .impact-cards {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .impact-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .impact-num {
+      font-family: var(--fd);
+      font-size: 22px; font-weight: 800;
+      color: var(--accent3); letter-spacing: -1px;
+      white-space: nowrap; min-width: 60px;
+    }
+    .impact-desc {
+      font-size: 13px; color: var(--muted);
+      font-weight: 300; line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .proj-two-col { grid-template-columns: 1fr; }
+      .proj-header { flex-direction: column; gap: 14px; }
+    }
 
     /* ── CERTIFICATIONS ── */
     #certifications { padding: var(--spy) 0; }
@@ -528,34 +666,205 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="w" style="padding-top:var(--spy);padding-bottom:var(--spy)">
-      <div class="s-tag">What I've built</div>
-      <h2>Projects</h2>
-      <div class="proj-grid">
-        <div class="proj-card fi">
-          <div class="proj-num">01</div>
-          <div class="proj-name">Interactive Data Analytics Tool</div>
-          <div class="proj-desc">Built an interactive data analytics platform using Streamlit with a user-friendly interface for complex in-depth analysis workflows, making data exploration accessible to non-technical users.</div>
-          <div class="techs"><span class="tech">Python</span><span class="tech">Streamlit</span><span class="tech">Pandas</span><span class="tech">Plotly</span></div>
+      <div class="s-tag">What I've delivered</div>
+      <h2>Featured Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="proj-full fi">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🏔️</div>
+          <div class="proj-meta">
+            <div class="proj-num-lg">01</div>
+            <h3 class="proj-title">Wherescape Retirement &amp; Snowflake Migration</h3>
+            <div class="proj-client">Republic Services — US-based Waste Management Firm</div>
+            <div class="proj-attrs">
+              <span class="proj-attr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 16 Months</span>
+              <span class="proj-attr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Team of 6</span>
+              <span class="proj-attr-role">Lead · Architect · Delivery Manager</span>
+            </div>
+          </div>
         </div>
-        <div class="proj-card fi">
-          <div class="proj-num">02</div>
-          <div class="proj-name">Blueshift Encryption Standard</div>
-          <div class="proj-desc">Developed a novel encryption algorithm to enhance data security in cloud platforms, implementing advanced techniques to significantly bolster data protection in distributed environments.</div>
-          <div class="techs"><span class="tech">Python</span><span class="tech">Cryptography</span><span class="tech">Cloud Security</span></div>
-        </div>
-        <div class="proj-card fi">
-          <div class="proj-num">03</div>
-          <div class="proj-name">E-Commerce Price Comparison</div>
-          <div class="proj-desc">Created a web scraping tool to analyze and compare product prices across two major e-commerce sites with custom Tableau dashboards for strategic pricing insights. <span style="color:var(--accent3);font-size:12px;font-family:var(--fm)">+20% accuracy</span></div>
-          <div class="techs"><span class="tech">Python</span><span class="tech">BeautifulSoup</span><span class="tech">Tableau</span><span class="tech">Pandas</span></div>
-        </div>
-        <div class="proj-card fi">
-          <div class="proj-num">04</div>
-          <div class="proj-name">Network Obfuscation Algorithm</div>
-          <div class="proj-desc">Implemented network obfuscation techniques to protect user identification in network datasets, enhancing privacy and security in data-heavy distributed environments.</div>
-          <div class="techs"><span class="tech">Python</span><span class="tech">Network Security</span><span class="tech">Algorithms</span></div>
+
+        <div class="proj-body">
+          <div class="proj-summary">
+            Led end-to-end modernisation of a legacy Wherescape reporting environment for one of the largest waste management companies in the US — reverse-engineering existing reports, tracing all upstream source dependencies, and migrating the full data landscape to a Snowflake Medallion architecture. Delivered a scalable, analytics-ready platform that retired an unsupported legacy tool and eliminated its operational risk.
+          </div>
+
+          <div class="proj-two-col">
+            <div>
+              <div class="proj-section-label">Key Contributions</div>
+              <ul class="proj-list">
+                <li>Directed a 6-member cross-functional team across architecture, ETL, data modelling, and validation workstreams</li>
+                <li>Defined Medallion layer structure (Bronze → Silver → Gold) on Snowflake and mapped source objects to the canonical data model</li>
+                <li>Engineered a <strong>Generative AI + Python pipeline</strong> to reverse-engineer Wherescape reports — auto-identifying source objects, transformation logic, and business rules</li>
+                <li>Built IICS-based ingestion pipelines into the Snowflake Bronze layer and dbt transformation models across ODS, CDM, and Gold layers</li>
+                <li>Applied PySpark for large-scale data validation and row-count reconciliation between legacy and migrated environments</li>
+                <li>Leveraged GitHub Copilot to accelerate dbt model and SQL development across the team</li>
+              </ul>
+            </div>
+            <div>
+              <div class="proj-section-label">Impact</div>
+              <div class="impact-cards">
+                <div class="impact-item">
+                  <div class="impact-num">~40%</div>
+                  <div class="impact-desc">Reduction in source discovery effort via GenAI-assisted reverse engineering</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">16 mo</div>
+                  <div class="impact-desc">Complex engagement delivered on time across 6 workstreams</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">100%</div>
+                  <div class="impact-desc">Legacy Wherescape dependency retired — zero operational risk remaining</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-section-label" style="margin-top:24px">Tech Stack</div>
+          <div class="techs">
+            <span class="tech hl">Snowflake</span>
+            <span class="tech hl">dbt</span>
+            <span class="tech hl">Informatica IICS</span>
+            <span class="tech hl">PySpark</span>
+            <span class="tech hl">Generative AI</span>
+            <span class="tech">AWS Step Functions</span>
+            <span class="tech">Python</span>
+            <span class="tech">LucidChart</span>
+            <span class="tech">GitHub Copilot</span>
+          </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="proj-full fi">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">☁️</div>
+          <div class="proj-meta">
+            <div class="proj-num-lg">02</div>
+            <h3 class="proj-title">Lakehouse Architecture on Azure Databricks</h3>
+            <div class="proj-client">US-based Supply Chain Optimization Product Company</div>
+            <div class="proj-attrs">
+              <span class="proj-attr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Team of 3</span>
+              <span class="proj-attr-role">Architect · Data Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-body">
+          <div class="proj-summary">
+            Architected and delivered a cloud-native Lakehouse platform on Azure Databricks, consolidating data from SFTP feeds, OLTP databases, and CRM systems into a unified analytics-ready foundation. Covered the full spectrum from ingestion pattern design to data product delivery and operational observability — enabling consistent supply chain analytics across business domains.
+          </div>
+
+          <div class="proj-two-col">
+            <div>
+              <div class="proj-section-label">Key Contributions</div>
+              <ul class="proj-list">
+                <li>Designed end-to-end Lakehouse architecture — defining Bronze, Silver, and Gold layer responsibilities and data product boundaries aligned to business domains</li>
+                <li>Built a <strong>common data ingestion framework using ADF</strong>, standardising connectivity across SFTP, OLTP, and CRM sources to eliminate one-off pipeline sprawl</li>
+                <li>Implemented <strong>Change Data Capture (CDC)</strong> via ADF to track and propagate incremental changes from OLTP sources into the Bronze layer</li>
+                <li>Developed PySpark notebooks in Databricks for Bronze→Silver cleansing and Silver→Gold aggregation and data product preparation</li>
+                <li>Implemented observability using Azure Logic Apps for alerting and Azure Dashboards for real-time pipeline health monitoring</li>
+              </ul>
+            </div>
+            <div>
+              <div class="proj-section-label">Impact</div>
+              <div class="impact-cards">
+                <div class="impact-item">
+                  <div class="impact-num">↑ Speed</div>
+                  <div class="impact-desc">Reusable ingestion framework significantly reduced time-to-onboard new data sources</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">Unified</div>
+                  <div class="impact-desc">Fragmented supply chain data across SFTP, OLTP &amp; CRM consolidated into a single Lakehouse</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">↓ MTTR</div>
+                  <div class="impact-desc">Observability layer reduced undetected pipeline failures and mean time to resolution</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-section-label" style="margin-top:24px">Tech Stack</div>
+          <div class="techs">
+            <span class="tech hl">Azure Databricks</span>
+            <span class="tech hl">Azure Data Factory</span>
+            <span class="tech hl">PySpark</span>
+            <span class="tech hl">Delta Lake</span>
+            <span class="tech">Azure Logic Apps</span>
+            <span class="tech">Azure Monitor</span>
+            <span class="tech">SQL Server</span>
+            <span class="tech">SFTP</span>
+            <span class="tech">CRM Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="proj-full fi">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">📡</div>
+          <div class="proj-meta">
+            <div class="proj-num-lg">03</div>
+            <h3 class="proj-title">Impact Analysis Platform for Content Syndication</h3>
+            <div class="proj-client">US-based Content Syndication Platform</div>
+            <div class="proj-attrs">
+              <span class="proj-attr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Team of 3</span>
+              <span class="proj-attr-role">Solution Architect · Data Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-body">
+          <div class="proj-summary">
+            Defined and delivered a cloud-native data platform on AWS to power impact analysis for a content syndication business — enabling the company to measure how syndicated content performs across distribution channels. Owned end-to-end solution architecture, pipeline engineering, and observability across the full AWS data stack.
+          </div>
+
+          <div class="proj-two-col">
+            <div>
+              <div class="proj-section-label">Key Contributions</div>
+              <ul class="proj-list">
+                <li>Owned full solution architecture — evaluated AWS service options and defined the target-state covering ingestion, transformation, storage, orchestration, and analytics layers</li>
+                <li>Built <strong>PySpark transformation pipelines containerised on AWS ECS</strong> for large-scale content engagement data processing with partitioning and performance optimisation</li>
+                <li>Modelled curated analytical datasets in <strong>AWS Redshift</strong> to support impact analysis queries across content, channel, and time dimensions</li>
+                <li>Orchestrated end-to-end pipelines using <strong>AWS Step Functions</strong> — managing multi-stage dependencies, branching logic, error handling, and retry policies</li>
+                <li>Implemented structured CloudWatch logging, metrics, and alerting for real-time pipeline health visibility and SLA monitoring</li>
+              </ul>
+            </div>
+            <div>
+              <div class="proj-section-label">Impact</div>
+              <div class="impact-cards">
+                <div class="impact-item">
+                  <div class="impact-num">First</div>
+                  <div class="impact-desc">Enabled the business to quantify content syndication performance across channels for the first time</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">Reliable</div>
+                  <div class="impact-desc">Step Functions orchestration made multi-stage workflows fully auditable and self-recovering</div>
+                </div>
+                <div class="impact-item">
+                  <div class="impact-num">↓ Failures</div>
+                  <div class="impact-desc">Observability layer reduced time to detect and resolve pipeline failures for analytics stakeholders</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-section-label" style="margin-top:24px">Tech Stack</div>
+          <div class="techs">
+            <span class="tech hl">AWS Step Functions</span>
+            <span class="tech hl">AWS Redshift</span>
+            <span class="tech hl">PySpark</span>
+            <span class="tech hl">AWS ECS</span>
+            <span class="tech">AWS S3</span>
+            <span class="tech">AWS CloudWatch</span>
+            <span class="tech">Pandas</span>
+            <span class="tech">Python</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
